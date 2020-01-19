@@ -1,12 +1,3 @@
-CREATE TABLE IF NOT EXISTS list {
-    id INT NOT NULL AUTO_INCREMENT,
-    id_user int NOT NULL,
-    id_products int NOT NULL,
-    CONSTRAINT pk_id_list PRIMARY KEY(id),
-    CONSTRAINT fk_id_user FOREIGN KEY(id_user) REFERENCES users(id)
-    CONSTRAINT fk_id_products FOREIGN KEY(id_products) REFERENCES products(id)
-}
-
 CREATE TABLE IF NOT EXISTS administration (
     id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(30) NOT NULL,
