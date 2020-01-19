@@ -28,7 +28,6 @@ CREATE TABLE IF NOT EXISTS products(
     CONSTRAINT pk_id_list PRIMARY KEY(id)
 ) ENGINE=innoDB DEFAULT CHARSET=utf8;
 
-use buysmart;
 INSERT INTO products (name, type, unityType, weight, carbonPrint, waterPrint) VALUES ('Apple','Fruit', 'Unit', '150.00', '0.0108', '0.045');
 INSERT INTO products (name, type, unityType, weight, carbonPrint, waterPrint) VALUES ('Organic Apple','Fruit', 'Unit', '150.0', '0.0174', '0.045');
 INSERT INTO products (name, type, unityType, weight, carbonPrint, waterPrint) VALUES ('Tomato', 'Fruit','Unit', '155.92', '0.03424', '28.689');
