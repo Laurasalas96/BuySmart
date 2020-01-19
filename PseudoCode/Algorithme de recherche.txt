@@ -1,0 +1,12 @@
+from difflib import SequenceMatcher
+
+items getMatchingItems(keyword)
+	allItems = getAllItems()
+	matchingItems
+	for(item : allItems)
+		if(item.name.contain(keyword)
+			matchingItems.append(item)
+	for(item : allItems)
+		if(!matchingItems.contain(item) && SequenceMatcher(None, item.name, keyword).ratio() > 0.65)
+			matchingItems.append(item)
+	return matchingItems

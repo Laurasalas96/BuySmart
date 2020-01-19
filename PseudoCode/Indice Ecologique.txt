@@ -1,0 +1,29 @@
+poidValeurEau = 60%
+poidValeurCarbone = 100% - poidValeurEau
+
+double getIndiceEcologique(item)
+	rankEau = getRankEau(item)
+	rankCarbone = getRankCarbone(item)
+	indiceEcolo = (rankEau.first / rankEau.second * poidValeurEau) + (rankCarbone.first / rankCarbone.second * poidValeurCarbone)
+	return indiceEcolo
+
+//pair<rank, total>
+pair<int,int> getRankEau(item)
+	allItems = getAllIngredient()
+	allItems.sort("Eau")
+	return makepair<int,int>(allItems.indexOf(item), allItems.size())
+
+//pair<rank, total>
+pair<int,int> getRankCarbone(item)
+	allItems = getAllIngredient()
+	allItems.sort("Carbone")
+	return makepair<int,int>(allItems.indexOf(item), allItems.size())
+
+//items = all item of list
+double getIndiceEcologiqueTotal(items)
+	double allEau = getAllEau(items)
+	double allCarbone = getAllCarbone(items)
+	double indiceTotal
+	for(item : items) 
+		indiceTotal += getIndiceEcologique(item) * (poidValeurEau * (getRankEau(item) / allEau) + poidValeurCarbone* (getRankCarbone(item) / allCarbone))
+	return indiceTotal
